@@ -1,0 +1,9 @@
+-dontwarn com.google.mlkit.vision.text.**
+-dontwarn com.google_mlkit_text_recognition.**
+-keep class com.google.mlkit.vision.text.** { *; }
+-keep class io.flutter.app.** { *; }
+-keep class io.flutter.plugin.** { *; }
+-keep class io.flutter.util.** { *; }
+-keep class io.flutter.view.** { *; }
+-keep class io.flutter.** { *; }
+-keep class io.flutter.plugins.** { *; }
