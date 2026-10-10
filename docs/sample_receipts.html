@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Receipts for Demo - OCR Expense Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+    .header p {
+      font-size: 15px;
+      color: #94a3b8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .receipt-card {
+      background: #ffffff;
+      color: #111827;
+      font-family: 'Courier Prime', monospace;
+      padding: 32px 24px;
+      border-radius: 4px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      position: relative;
+      border-top: 6px solid #2563eb;
+    }
+    .receipt-card::before, .receipt-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-size: 12px 6px;
+    }
+    .receipt-card::after {
+      bottom: -6px;
+      background-image: radial-gradient(circle at 6px 0, transparent 6px, #ffffff 6px);
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .store-sub {
+      font-size: 11px;
+      text-align: center;
+      color: #4b5563;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .divider {
+      border-top: 1px dashed #9ca3af;
+      margin: 12px 0;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: #374151;
+    }
+    .item-table {
+      width: 100%;
+      margin: 12px 0;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .item-table th {
+      text-align: left;
+      font-size: 11px;
+      border-bottom: 1px dashed #9ca3af;
+      padding-bottom: 6px;
+      color: #4b5563;
+    }
+    .item-table td {
+      padding: 6px 0;
+    }
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    .total-section {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .grand-total {
+      font-size: 16px;
+      font-weight: 700;
+      border-top: 1px dashed #111827;
+      border-bottom: 1px dashed #111827;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+    .footer-msg {
+      text-align: center;
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 16px;
+      line-height: 1.4;
+    }
+    .barcode {
+      text-align: center;
+      margin-top: 12px;
+      font-family: 'Courier Prime', monospace;
+      letter-spacing: 5px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .category-badge {
+      position: absolute;
+      top: -14px;
+      right: 16px;
+      background: #2563eb;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>HÓA ĐƠN MẪU ĐỂ CHỤP / QUÉT DEMO</h1>
+    <p>Chỉ cần mở trang web này trên màn hình máy tính, sau đó mở app trên điện thoại hướng camera vào là quét 100% chuẩn xác!</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- RECEIPT 1: HIGHLANDS COFFEE -->
+    <div class="receipt-card">
+      <div class="category-badge">Food & Dining</div>
+      <div class="brand-title">HIGHLANDS COFFEE</div>
+      <div class="store-sub">
+        Chi nhánh: 123 Nguyễn Văn Linh, Đà Nẵng<br>
+        Hotline: 1900 1755 • MST: 0302564872
+      </div>
+      <div class="divider"></div>
+      <div class="meta-row">
+        <span>Số HĐ: HD-88492</span>
+        <span>Thu ngân: NV02</span>
+      </div>
+      <div class="meta-row">
+        <span>Ngày: 10/10/2026</span>
+        <span>Giờ: 09:30</span>
+      </div>
+      <div class="divider"></div>
+
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>MẶT HÀNG</th>
+            <th class="text-center">SL</th>
+            <th class="text-right">TIỀN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trà Sen Vàng (L)</td>
+            <td class="text-center">1</td>
+            <td class="text-right">55.000</td>
+          </tr>
+          <tr>
+            <td>Phin Sữa Đá (M)</td>
+            <td class="text-center">1</td>
+            <td class="text-right">39.000</td>
+          </tr>
+          <tr>
+            <td>Bánh Phô Mai Cà Phê</td>
+            <td class="text-center">1</td>
+            <td class="text-right">29.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-section">
+        <div class="total-row">
+          <span>Cộng tiền hàng:</span>
+          <span>123.000</span>
+        </div>
+        <div class="total-row">
+          <span>Chiết khấu hội viên:</span>
+          <span>0</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>TỔNG CỘNG:</span>
+          <span>123.000 đ</span>
+        </div>
+        <div class="total-row">
+          <span>Tiền mặt:</span>
+          <span>150.000</span>
+        </div>
+        <div class="total-row">
+          <span>Tiền thừa:</span>
+          <span>27.000</span>
+        </div>
+      </div>
+
+      <div class="barcode">||| | ||||| || |||| ||</div>
+      <div class="footer-msg">
+        Cảm ơn quý khách và hẹn gặp lại!<br>
+        Wifi: Highlands_Free / Pass: 12345678
+      </div>
+    </div>
+
+    <!-- RECEIPT 2: TRÀ SỮA PHÚC LONG -->
+    <div class="receipt-card">
+      <div class="category-badge" style="background:#059669;">Food & Dining</div>
+      <div class="brand-title">PHÚC LONG COFFEE & TEA</div>
+      <div class="store-sub">
+        Địa chỉ: 72 Lê Duẩn, Hải Châu, Đà Nẵng<br>
+        Điện thoại: 0236 3892 888
+      </div>
+      <div class="divider"></div>
+      <div class="meta-row">
+        <span>Mã phiếu: PL-009182</span>
+        <span>Bàn: Tự mang về</span>
+      </div>
+      <div class="meta-row">
+        <span>Ngày: 09/10/2026</span>
+        <span>Giờ: 15:45</span>
+      </div>
+      <div class="divider"></div>
+
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>MẶT HÀNG</th>
+            <th class="text-center">SL</th>
+            <th class="text-right">TIỀN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trà Đào Cam Sả (L)</td>
+            <td class="text-center">2</td>
+            <td class="text-right">130.000</td>
+          </tr>
+          <tr>
+            <td>Trà Sữa Phúc Long (L)</td>
+            <td class="text-center">1</td>
+            <td class="text-right">65.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-section">
+        <div class="total-row grand-total">
+          <span>TỔNG CỘNG:</span>
+          <span>195.000 đ</span>
+        </div>
+        <div class="total-row">
+          <span>Thanh toán:</span>
+          <span>Chuyển khoản / VNPAY</span>
+        </div>
+      </div>
+
+      <div class="barcode">|||| ||| |||| | ||||||</div>
+      <div class="footer-msg">
+        Kính chúc quý khách ngon miệng!<br>
+        Hóa đơn điện tử: phuclong.com.vn/hddt
+      </div>
+    </div>
+
+    <!-- RECEIPT 3: NHÀ SÁCH FAHASA -->
+    <div class="receipt-card">
+      <div class="category-badge" style="background:#7c3aed;">Education</div>
+      <div class="brand-title">NHÀ SÁCH FAHASA</div>
+      <div class="store-sub">
+        Chi nhánh: Siêu Thị Fahasa Đà Nẵng<br>
+        Địa chỉ: 300-302 Lê Duẩn, TP Đà Nẵng
+      </div>
+      <div class="divider"></div>
+      <div class="meta-row">
+        <span>Số hóa đơn: FHS-4091</span>
+        <span>Quầy: 03</span>
+      </div>
+      <div class="meta-row">
+        <span>Ngày: 08/10/2026</span>
+        <span>Giờ: 19:10</span>
+      </div>
+      <div class="divider"></div>
+
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>MẶT HÀNG</th>
+            <th class="text-center">SL</th>
+            <th class="text-right">TIỀN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sách Lập trình Flutter</td>
+            <td class="text-center">1</td>
+            <td class="text-right">180.000</td>
+          </tr>
+          <tr>
+            <td>Vở Kẻ Ngang 200 Trang</td>
+            <td class="text-center">3</td>
+            <td class="text-right">45.000</td>
+          </tr>
+          <tr>
+            <td>Bút Gel Bấm Xanh</td>
+            <td class="text-center">2</td>
+            <td class="text-right">24.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-section">
+        <div class="total-row">
+          <span>Cộng tiền hàng:</span>
+          <span>249.000</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>TỔNG CỘNG:</span>
+          <span>249.000 đ</span>
+        </div>
+      </div>
+
+      <div class="barcode">|| ||||| ||| |||| | ||</div>
+      <div class="footer-msg">
+        Xin cảm ơn quý khách!<br>
+        Đổi trả trong vòng 7 ngày kèm hóa đơn
+      </div>
+    </div>
+
+    <!-- RECEIPT 4: GRAB VIETNAM -->
+    <div class="receipt-card">
+      <div class="category-badge" style="background:#0284c7;">Transportation</div>
+      <div class="brand-title">GRAB VIETNAM</div>
+      <div class="store-sub">
+        Dịch vụ di chuyển công nghệ GrabBike<br>
+        Mã chuyến xe: A-9982410-X
+      </div>
+      <div class="divider"></div>
+      <div class="meta-row">
+        <span>Khách hàng: Nguyen Van A</span>
+        <span>Tài xế: Tran Van B</span>
+      </div>
+      <div class="meta-row">
+        <span>Ngày: 07/10/2026</span>
+        <span>Giờ: 08:15</span>
+      </div>
+      <div class="divider"></div>
+
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>CHI TIẾT CHUYẾN ĐI</th>
+            <th class="text-center"></th>
+            <th class="text-right">TIỀN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cước phí chuyến đi (4.2 km)</td>
+            <td class="text-center"></td>
+            <td class="text-right">38.000</td>
+          </tr>
+          <tr>
+            <td>Phí nền tảng & phụ phí</td>
+            <td class="text-center"></td>
+            <td class="text-right">4.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-section">
+        <div class="total-row grand-total">
+          <span>TỔNG CỘNG:</span>
+          <span>42.000 đ</span>
+        </div>
+        <div class="total-row">
+          <span>Phương thức:</span>
+          <span>Ví MoMo</span>
+        </div>
+      </div>
+
+      <div class="barcode">|||| || ||||| ||| || |</div>
+      <div class="footer-msg">
+        Cảm ơn bạn đã lựa chọn Grab!<br>
+        Hóa đơn điện tử gửi về email.
+      </div>
+    </div>
+
+    <!-- RECEIPT 5: CGV CINEMA MOVIE TICKET -->
+    <div class="receipt-card">
+      <div class="category-badge" style="background:#db2777;">Entertainment</div>
+      <div class="brand-title">CGV HÙNG VƯƠNG PLAZA</div>
+      <div class="store-sub">
+        CJ CGV VIETNAM - Tầng 7 Hùng Vương Plaza, Q.5, TP.HCM<br>
+        Hotline: 1900 6017 • Giờ in: 18:45
+      </div>
+      <div class="divider"></div>
+      <div class="brand-title" style="font-size: 14px; margin: 6px 0;">VÉ VÀO PHÒNG CHIẾU</div>
+      <div class="store-sub" style="margin-bottom: 8px;">(MOVIE TICKET)</div>
+      <div class="meta-row">
+        <span>Phim: ĐẤT RỪNG PHƯƠNG NAM</span>
+        <span>Rạp: CINEMA 3</span>
+      </div>
+      <div class="meta-row">
+        <span>Ngày: 10/10/2026</span>
+        <span>Suất: 19:30</span>
+      </div>
+      <div class="meta-row">
+        <span>Ghế (Seat): H11, H12</span>
+        <span>Loại: Standard</span>
+      </div>
+      <div class="divider"></div>
+
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>MẶT HÀNG</th>
+            <th class="text-center">SL</th>
+            <th class="text-right">TIỀN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vé 2D Standard</td>
+            <td class="text-center">2</td>
+            <td class="text-right">220.000</td>
+          </tr>
+          <tr>
+            <td>Combo 1 Bắp 2 Nước</td>
+            <td class="text-center">1</td>
+            <td class="text-right">115.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-section">
+        <div class="total-row grand-total">
+          <span>TỔNG CỘNG:</span>
+          <span>335.000 đ</span>
+        </div>
+        <div class="total-row">
+          <span>Khách thanh toán:</span>
+          <span>335.000 đ</span>
+        </div>
+      </div>
+
+      <div class="barcode">||| |||| || ||||| ||||</div>
+      <div class="footer-msg">
+        Chúc quý khách xem phim vui vẻ!<br>
+        Website: www.cgv.vn
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
